@@ -32,6 +32,10 @@ const columns = [
     label: <div className="col-header-wrapper text-left">Call Duration</div>,
     value: (d) => Formatter.Time(d.duration),
   },
+  {
+    label: <div className="col-header-wrapper text-left">Sales Opt?</div>,
+    value: (d) => d.categories === 'Sales-category' ? 'Sales Opt' : ''
+  },
 ];
 
 const Loading = () =>

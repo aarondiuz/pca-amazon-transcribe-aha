@@ -47,7 +47,7 @@ function Home({ setAlert }) {
 
   return (
     <div>
-      <h3>Home</h3>
+      <h3>AnyCompany - List of stored calls</h3>
       <ContactTable
         data={details}
         loading={!data && !error}

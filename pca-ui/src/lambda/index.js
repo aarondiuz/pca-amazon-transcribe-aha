@@ -70,6 +70,11 @@ async function createRecord(record) {
         parsed.ConversationAnalytics.SentimentTrends[callerId].SentimentScore,
       callerSentimentChange:
         parsed.ConversationAnalytics.SentimentTrends[callerId].SentimentChange,
+      categories:
+        parsed.ConversationAnalytics.CategoriesDetected &&
+        parsed.ConversationAnalytics.CategoriesDetected[0]
+        ? parsed.ConversationAnalytics.CategoriesDetected[0].Name
+        : 'No-category',
     });
     console.log("Data:", data);
 

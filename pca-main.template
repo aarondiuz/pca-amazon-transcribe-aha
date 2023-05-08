@@ -647,6 +647,12 @@ Resources:
             Displayable: true
             Facetable: true
           Type: 'STRING_LIST_VALUE'
+        - Name: CATEGORY_DETECTED
+          Search:
+            Displayable: true
+            Facetable: true
+            Searchable: true
+          Type: 'STRING_VALUE'
 
 
   

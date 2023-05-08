@@ -101,6 +101,20 @@ def get_entity_values(entityType, dicts, maxLength=10):
     return entityList[:maxLength]
 
 
+def get_category(dicts):
+    """
+    Return the category detected name (used to determine if a call has a Sales opp or not)
+    """
+    if len(dicts) == 0:
+        value = "None"
+    else:
+        if dicts[0]["Name"] == "Sales-category":
+            value = "sales"
+        else:
+            value = "None"
+    return value
+
+
 def durationBucket(durationStr):
     """
     Return string category label for call duration
@@ -212,6 +226,12 @@ def put_kendra_document(indexId, analysisUri, conversationAnalytics, text):
                 "Key": "ENTITY_TITLE",
                 "Value": {
                     "StringListValue": get_entity_values("TITLE", conversationAnalytics["CustomEntities"])
+                }
+            },
+            {
+                "Key": "CATEGORY_DETECTED",
+                "Value": {
+                    "StringValue": get_category(conversationAnalytics["CategoriesDetected"])
                 }
             }
         ],

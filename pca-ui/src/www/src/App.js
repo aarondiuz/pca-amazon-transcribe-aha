@@ -11,6 +11,7 @@ import Dashboard from "./routes/Dashboard/index";
 import { useState } from "react";
 import { payloadFromToken, logOut } from "./api/auth";
 
+// Routes to different sections of the webpage (later used in the Navigation function)
 const routes = [
   { path: "/search", name: "Search", Component: Search },
   {
@@ -22,11 +23,12 @@ const routes = [
   { path: "/", name: "Home", Component: Home },
 ];
 
+// Navigation bar from the top of the webpage
 function Navigation({ userName }) {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand>Amazon Transcribe PCA</Navbar.Brand>
+        <Navbar.Brand>AnyCompany - Amazon Transcribe PCA (Internal Hexaware)</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="me-auto">
